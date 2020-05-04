@@ -5,7 +5,7 @@ import PIL.ImageTk
 
 def dispPhoto(path):
     #画像を読み込む
-    newImage = PIL.Image.open(path).resize((300, 300))
+    newImage = PIL.Image.open(path).convert("L").resize((32, 32)).resize((300, 300))
     #そのイメージをラベルに表示する
     imageData = PIL.ImageTk.PhotoImage(newImage)
     imagelabel.configure(image = imageData)
